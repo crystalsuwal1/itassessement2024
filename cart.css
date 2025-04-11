@@ -1,0 +1,164 @@
+
+body{
+height: 100%;
+width: 1320px;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.header {
+    background-color: #ffb7b8;
+    text-align: center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  
+}
+
+.logo {
+    width: 100px;  
+    height: auto;  
+    display: block;
+    padding: 0px;
+    margin: auto;
+}
+
+nav{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+
+input{ /*search bar*/
+    list-style: none;
+    display: inline-block;
+    position: absolute;  
+    left: 0;             
+    background-color: #ffe0e0;
+    padding: 10px;
+    width: 300px;
+}
+
+.navbar{
+    flex: 1;
+    text-align: center;
+    background-color: #fbe1e1;
+   
+   
+   
+}
+
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+
+}
+
+.navbar ul li a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.navbar ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #7D1424;
+    display: block;
+    margin: auto; 
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+
+input{ /*search bar*/
+    list-style: none;
+    display: inline-block;
+    position: absolute;  
+    left: 0;             
+    background-color: #ffe0e0;
+    padding: 10px;
+    width: 300px;
+}
+
+.main-content {
+    padding: 30px;
+    background-color: #fff2f4;
+    text-align: center;
+  }
+  
+  .welcome h1 {
+    font-size: 2.5rem;
+    color: #ff4d6d;
+    margin-bottom: 10px;
+  }
+  
+  .featured h2, .teddy-table h2 {
+    color: #ff6680;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .teddy-showcase {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .teddy img {
+    width: 150px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .teddy p {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .teddy-table table {
+    margin: 20px auto;
+    width: 90%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .teddy-table th, .teddy-table td {
+    border: 1px solid #ffc0cb;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .teddy-table th {
+    background-color: #ffe4e1;
+    color: #ff3366;
+  }
+  
+  .teddy-table tr:nth-child(even) {
+    background-color: #fff6f7;
+  }
+
+  .footer{
+    background: #dcbdbd;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
