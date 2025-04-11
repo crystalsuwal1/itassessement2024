@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        
+        body{
+height: 100%;
+width: 1320px;
+
+}
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #ffb7b8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            order: 2;
+        }
+
+        .search-container {
+            order: 1;
+        }
+
+        .search-bar {
+            padding: 10px 15px;
+            width: 300px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ffe0e0;
+            outline: none;
+        }
+
+        nav {
+            background-color: #fbe1e1;
+            padding: 10px 0;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #7D1424;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        .contact-section {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff0f3;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            color: #ff4d6d;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ffb3c1;
+            background-color: #fff;
+            font-size: 14px;
+        }
+
+        .contact-section textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-section button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #ff4d6d;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 25px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-section button:hover {
+            background-color: #e0435f;
+        }
+
+        .error {
+            color: #ff4d6d;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .input-error {
+            border-color: #ff4d6d !important;
+        }
+
+        .footer {
+            background: #dcbdbd;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="search-container">
+            <input type="text" placeholder="Search our collection" class="search-bar">
+        </div>
+        <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <nav>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="cart.html">CART</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+                <div class="error" id="nameError">Please enter your name</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <div class="error" id="emailError">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+                <div class="error" id="messageError">Please enter your message</div>
+            </div>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Teddyz.np. All rights reserved ©</p>
+        <p>Email: contact@teddyz.com.np</p>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset previous errors
+            resetErrors();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            let isValid = true;
+            
+            // Validate name
+            if (name === '') {
+                showError('nameError', 'name');
+                isValid = false;
+            }
+            
+            // Validate email
+            if (email === '') {
+                showError('emailError', 'email');
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                showError('emailError', 'email');
+                isValid = false;
+            }
+            
+            // Validate message
+            if (message === '') {
+                showError('messageError', 'message');
+                isValid = false;
+            }
+            
+            // If form is valid, submit it
+            if (isValid) {
+                alert('Form submitted successfully!');
+                this.reset();
+            }
+        });
+        
+        function showError(errorId, inputId) {
+            document.getElementById(errorId).style.display = 'block';
+            document.getElementById(inputId).classList.add('input-error');
+        }
+        
+        function resetErrors() {
+            const errors = document.querySelectorAll('.error');
+            errors.forEach(error => {
+                error.style.display = 'none';
+            });
+            
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.classList.remove('input-error');
+            });
+        }
+        
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        // Add real-time validation as users type
+        document.getElementById('name').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                document.getElementById('nameError').style.display = 'none';
+                this.classList.remove('input-error');
+            }
+        });
+        
+        document.getElementById('email').addEventListener('input', function() {
+            if (this.value.trim() !== '' && isValidEmail(this.value.trim())) {
+                document.getElementById('emailError').style.display = 'none';
+                this.classList.remove('input-error');
+            }
+        });
+        
+        document.getElementById('message').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                document.getElementById('messageError').style.display = 'none';
+                this.classList.remove('input-error');
+            }
+        });
+    </script>
+</body>
+</html>
