@@ -1,0 +1,160 @@
+body{
+    height: 100%;
+    width: 1320px;
+    
+    }
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.header {
+    background-color: #ffb7b8;
+    text-align: center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.logo {
+    width: 100px;  
+    height: auto;  
+    display: block;
+    padding: 0px;
+    margin: auto;
+}
+
+nav{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+
+input{ /*search bar*/
+    list-style: none;
+    display: inline-block;
+    position: absolute;  
+    left: 0;             
+    background-color: #ffe0e0;
+    padding: 10px;
+    width: 300px;
+}
+
+.navbar{
+    flex: 1;
+    text-align: center;
+    background-color: #fbe1e1;
+   
+   
+   
+}
+
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+
+}
+
+.navbar ul li a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.navbar ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #7D1424;
+    display: block;
+    margin: auto; 
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .products2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .product-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 280px;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .product-card img { 
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .product-card h2 {
+    margin: 1rem 0 0.5rem;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .price del {
+    color: #888;
+    margin-right: 0.5rem;
+  }
+  
+  button {
+    background-color: #007B5E;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #005f47;
+  }
+  
+  footer {
+    background-color: #2d3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .footer{
+    background: #dcbdbd;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
